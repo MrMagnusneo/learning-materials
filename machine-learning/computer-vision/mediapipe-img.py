@@ -1,10 +1,11 @@
 import cv2
 import mediapipe as mp
+from pathlib import Path
 from mediapipe.tasks import python
 from mediapipe.tasks.python import vision
 
 # Путь к модели
-MODEL_PATH = 'blaze_face_short_range.tflite'
+MODEL_PATH = str(Path(__file__).resolve().with_name("blaze_face_short_range.tflite"))
 
 # Настройка опций детектора
 BaseOptions = python.BaseOptions

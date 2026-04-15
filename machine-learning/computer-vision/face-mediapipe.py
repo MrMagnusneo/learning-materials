@@ -1,10 +1,11 @@
 import cv2
 import mediapipe as mp
+from pathlib import Path
 from mediapipe.tasks import python
 from mediapipe.tasks.python import vision
 
 #https://storage.googleapis.com/mediapipe-models/face_detector/blaze_face_short_range/float16/1/blaze_face_short_range.tflite
-MODEL_PATH = 'blaze_face_short_range.tflite'
+MODEL_PATH = str(Path(__file__).resolve().with_name("blaze_face_short_range.tflite"))
 
 BaseOptions = python.BaseOptions
 FaceDetector = vision.FaceDetector
